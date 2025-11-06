@@ -1,7 +1,10 @@
-// Pesan sukses saat form dikirim
-document.getElementById("form-daftar").addEventListener("submit", function(e) {
-  e.preventDefault();
-  document.getElementById("success-message").textContent = 
-    "Terima kasih! Data pendaftaran Anda telah terkirim.";
-  this.reset();
+// Smooth scroll untuk menu navigasi
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    if (link.hash !== '') {
+      e.preventDefault();
+      const target = document.querySelector(link.hash);
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
